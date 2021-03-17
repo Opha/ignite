@@ -26,7 +26,7 @@ const currentDate = `${currentYear}-${currentMonth}-${currentDay}`;
 const lastYear = `${currentYear - 1}-${currentMonth}-${currentDay}`;
 const nextYear = `${currentYear + 1}-${currentMonth}-${currentDay}`;
 
-//popular games
+//asorted games
 const popular_games = `games?dates=${lastYear},${currentDate}&ordering=-rating&page_size=10`;
 const upcoming_games = `games?dates=${currentDate},${nextYear}&ordering=-added&page_size=10`;
 const new_games = `games?dates=${lastYear},${currentDate}&ordering=-released&page_size=10`;
@@ -34,3 +34,11 @@ const new_games = `games?dates=${lastYear},${currentDate}&ordering=-released&pag
 export const popularGamesURL = () => `${base_url}${popular_games}`;
 export const upcomingGamesURL = () => `${base_url}${upcoming_games}`;
 export const newGamesURL = () => `${base_url}${new_games}`;
+
+//game details
+export const gameDetailsURL = (gameID) => `${base_url}games/${gameID}`;
+
+//game screenshots
+export const gameScreenshotURL = (gameID) =>
+  `${base_url}games/${gameID}/screenshots`;
+console.log(gameScreenshotURL());
